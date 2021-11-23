@@ -31,6 +31,10 @@ class MyApp extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 50, top: 50, right: 50),
                 alignment: Alignment.center,
                 margin: const EdgeInsets.all(50),
+
+                //formbuilder es una libreria que ya trae seteados los
+                //distintos campos comunes como textbox, picker, etc.
+
                 child: FormBuilder(
                   key: _formKey,
                   child: Column(
@@ -125,13 +129,13 @@ class MyApp extends StatelessWidget {
                                 .currentState!.fields['textfield4']!.value;
                             final ddExp =
                                 _formKey.currentState!.fields['empleos']!.value;
-
+                            //todos los valores estan asignados en este momento
                             print('$tfNombre');
                             print('$tfEmail');
                             print('$tfPhone');
                             print('$tfAddress');
                             print('$ddExp');
-
+                            //vaciado de celdas y reset del enfoque de escritura
                             _formKey.currentState!.reset();
                             FocusScope.of(context).unfocus();
                           },
